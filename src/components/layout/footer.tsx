@@ -4,7 +4,6 @@ import { Mail, Phone } from 'lucide-react';
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];

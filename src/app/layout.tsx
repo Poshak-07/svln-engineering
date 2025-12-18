@@ -7,7 +7,8 @@ import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'SVLN Engineering',
-  description: 'India-based IT hardware procurement partner for government and institutional clients.',
+  description:
+    'India-based IT hardware procurement partner for government and institutional clients.',
 };
 
 export default function RootLayout({
@@ -27,9 +28,15 @@ export default function RootLayout({
       <body className={cn('font-body antialiased')}>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex-grow">{children}</main>
+
+          {/* IMPORTANT: no padding-top here */}
+          <main className="flex-grow">
+            {children}
+          </main>
+
           <Footer />
         </div>
+
         <Toaster />
       </body>
     </html>

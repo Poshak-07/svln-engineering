@@ -55,53 +55,63 @@ export function Header() {
           ))}
         </nav>
 
-        {/* MOBILE MENU (RIGHT) */}
-        <div className="ml-auto md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5 text-black" />
-                <span className="sr-only">Open Menu</span>
-              </Button>
-            </SheetTrigger>
+        {/* RIGHT SIDE (GSTIN + MOBILE MENU) */}
+        <div className="ml-auto flex items-center gap-6">
 
-            <SheetContent side="left">
-              <div className="flex flex-col gap-6 p-6">
+          {/* GSTIN (DESKTOP ONLY) */}
+          <span className="hidden md:block text-xs font-medium text-gray-600">
+            GSTIN: <span className="font-semibold text-gray-800">37AAPPP8592H1ZT</span>
+          </span>
 
-                {/* MOBILE LOGO */}
-                <Link
-                  href="/"
-                  className="flex flex-col leading-none"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span className="text-lg font-extrabold italic text-red-600 tracking-wide">
-                    SVLN
-                  </span>
-                  <span className="text-sm font-extrabold italic text-blue-700 tracking-wide">
-                    ENGINEERING
-                  </span>
-                </Link>
+          {/* MOBILE MENU */}
+          <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5 text-black" />
+                  <span className="sr-only">Open Menu</span>
+                </Button>
+              </SheetTrigger>
 
-                {/* MOBILE NAV */}
-                <nav className="grid gap-4">
-                  {navLinks.map(({ href, label }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={cn(
-                        'text-lg font-medium transition-colors hover:text-primary',
-                        pathname === href ? 'text-primary' : 'text-gray-800'
-                      )}
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </nav>
+              <SheetContent side="left">
+                <div className="flex flex-col gap-6 p-6">
 
-              </div>
-            </SheetContent>
-          </Sheet>
+                  {/* MOBILE LOGO */}
+                  <Link
+                    href="/"
+                    className="flex flex-col leading-none"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span className="text-lg font-extrabold italic text-red-600 tracking-wide">
+                      SVLN
+                    </span>
+                    <span className="text-sm font-extrabold italic text-blue-700 tracking-wide">
+                      ENGINEERING
+                    </span>
+                  </Link>
+
+                  {/* MOBILE NAV */}
+                  <nav className="grid gap-4">
+                    {navLinks.map(({ href, label }) => (
+                      <Link
+                        key={href}
+                        href={href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={cn(
+                          'text-lg font-medium transition-colors hover:text-primary',
+                          pathname === href ? 'text-primary' : 'text-gray-800'
+                        )}
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </nav>
+
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+
         </div>
 
       </div>
