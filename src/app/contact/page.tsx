@@ -2,8 +2,8 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from './contact-form';
 
 export const metadata = {
-  title: 'Contact Us | BluePrint Portfolio',
-  description: 'Get in touch with BluePrint Portfolio for inquiries, consultations, or to start your next project.',
+  title: 'Contact Us',
+  description: 'Get in touch with SVLN Engineering for inquiries, consultations, or to start your next project.',
 };
 
 export default function ContactPage() {
