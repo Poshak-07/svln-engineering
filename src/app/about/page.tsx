@@ -32,6 +32,12 @@ export default function AboutPage() {
             A trusted partner in IT hardware procurement and technology solutions
             for Government and institutional clients across India.
           </p>
+
+          {/* GSTIN */}
+          <p className="text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">GSTIN:</span>{' '}
+            37AAPPP8592H1ZT
+          </p>
         </div>
 
         {/* COMPANY OVERVIEW */}
