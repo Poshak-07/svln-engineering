@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useState, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 
 import {
   Select,
@@ -39,7 +39,7 @@ function SubmitButton() {
 }
 
 export function GenAIIntro() {
-  const [state, formAction] = useFormState(generateIntroAction, initialState);
+  const [state, formAction] = useActionState(generateIntroAction, initialState);
   const [tone, setTone] = useState('Professional');
 
   return (
