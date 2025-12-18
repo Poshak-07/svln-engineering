@@ -1,25 +1,23 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import {
-  ArrowRight,
-} from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { services, projects, testimonials } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import ProjectCard from '@/components/project-card';
-import TestimonialCard from '@/components/testimonial-card';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { services, projects, testimonials } from "@/lib/data";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
+} from "@/components/ui/carousel";
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
+  const heroImage = PlaceHolderImages.find(
+    (img) => img.id === "hero-background"
+  );
 
   return (
     <div className="flex flex-col">
@@ -38,11 +36,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
           <h1 className="font-headline text-4xl font-bold tracking-tight md:text-6xl">
-            Engineering Excellence, Building Futures
+            Engineering Reliable Technology Solutions
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Your trusted partner in structural design, analysis, and project management.
-            We turn vision into reality with precision and innovation.
+            India-based IT hardware procurement partner supplying genuine OEM
+            products for government and institutional needs.
           </p>
           <Button asChild size="lg" className="mt-8">
             <Link href="/projects">
@@ -51,7 +49,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-
       {/* Services Section */}
       <section id="services" className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
@@ -64,8 +61,8 @@ export default function Home() {
                 What We Do
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We offer a comprehensive range of engineering services to meet the needs of any
-                project, from concept to completion.
+                We offer a comprehensive range of engineering services to meet
+                the needs of any project, from concept to completion.
               </p>
             </div>
           </div>
@@ -76,78 +73,55 @@ export default function Home() {
                   <service.icon className="h-8 w-8" />
                 </div>
                 <h3 className="text-lg font-bold">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section id="projects" className="w-full bg-secondary py-12 md:py-24 lg:py-32">
+      {/* Partners Section */}
+      <section className="w-full bg-background py-12 md:py-20">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">
-                Featured Projects
-              </div>
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-5xl">
-                Our Portfolio
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                A glimpse into our diverse portfolio of successful projects, showcasing our
-                commitment to quality and innovation.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid gap-8 pt-12 sm:grid-cols-1 md:grid-cols-2">
-            {projects.slice(0, 2).map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button asChild variant="outline">
-              <Link href="/projects">
-                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-          <div className="space-y-3">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              What Our Clients Say
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+              Our Trusted Partners
             </h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Real feedback from clients who have experienced the BluePrint difference.
+            <p className="max-w-2xl text-muted-foreground">
+              We collaborate with established OEMs and industry-leading brands
+              to deliver reliable and compliant technology solutions.
             </p>
           </div>
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full max-w-4xl"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <TestimonialCard testimonial={testimonial} />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+
+          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-6">
+            {[
+              "bluestar.png",
+              "pristine.jpg",
+              "Bosch.png",
+              "powerol.png",
+              "Vertiv.png",
+              "Amaron.png",
+            ].map((partner) => (
+              <div
+                key={partner}
+                className="flex items-center justify-center rounded-xl border bg-white p-6 shadow-sm"
+              >
+                {/* Fixed-size logo container */}
+                <div className="relative h-20 w-40">
+                  <Image
+                    src={`/${partner}`}
+                    alt={`${partner.replace(/\.(png|jpg|jpeg)/i, "")} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="w-full border-t">
         <div className="container grid items-center gap-6 px-4 py-12 md:px-6 lg:grid-cols-2 lg:gap-10">
@@ -156,7 +130,8 @@ export default function Home() {
               Ready to Start Your Next Project?
             </h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Let's build something amazing together. Contact us today for a consultation.
+              Let's build something amazing together. Contact us today for a
+              consultation.
             </p>
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row lg:justify-end">

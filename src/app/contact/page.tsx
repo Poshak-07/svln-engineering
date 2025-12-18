@@ -24,7 +24,7 @@ export default function ContactPage() {
               <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-foreground">Our Office</h3>
-                <p>123 Engineering Lane, Structure City, 54321</p>
+                <p>21-45, 5th Lane, Viman Nagar, Visakhapatnam, Andhra Pradesh-530009</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -32,7 +32,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-semibold text-foreground">Email Us</h3>
                 <a href="mailto:contact@blueprint.dev" className="hover:text-primary">
-                  contact@blueprint.dev
+                  info@svlnengineering.in
                 </a>
               </div>
             </div>
@@ -40,8 +40,8 @@ export default function ContactPage() {
               <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-foreground">Call Us</h3>
-                <a href="tel:+1234567890" className="hover:text-primary">
-                  +1 (234) 567-890
+                <a href="tel:+919885588966" className="hover:text-primary">
+                  +91 9885588966
                 </a>
               </div>
             </div>

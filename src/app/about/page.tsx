@@ -1,69 +1,131 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { teamMembers } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { GenAIIntro } from './genai-intro';
 
-export const metadata = {
-  title: 'About Us | BluePrint Portfolio',
-  description: 'Learn about our mission, values, and the talented team behind BluePrint Portfolio.',
+export const metadata: Metadata = {
+  title: 'About Us | SVLN Engineering',
+  description:
+    'SVLN Engineering is an India-based firm supplying IT hardware and technology solutions to Government, Defence, PSUs, and institutional clients.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto max-w-5xl py-12 px-4 md:px-6 lg:py-24">
-      <div className="space-y-12">
-        <div className="text-center">
-          <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl">About BluePrint</h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            Discover our story, our values, and the team driving our success.
+    <div className="container mx-auto max-w-6xl py-12 px-4 md:px-6 lg:py-24">
+      <div className="space-y-20">
+
+        {/* PAGE HEADER */}
+        <div className="text-center space-y-6">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            About Us
+          </h1>
+
+          {/* LOGO AFTER HEADING */}
+          <div className="flex flex-col items-center leading-[0.9] select-none">
+            <span className="text-3xl font-extrabold italic text-red-600 tracking-wide">
+              SVLN
+            </span>
+            <span className="text-lg font-extrabold italic text-blue-700 tracking-wide -mt-1">
+              ENGINEERING
+            </span>
+          </div>
+
+          <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
+            A trusted partner in IT hardware procurement and technology solutions
+            for Government and institutional clients across India.
           </p>
         </div>
 
-        <div className="rounded-lg bg-card p-8 shadow-sm">
-          <h2 className="text-2xl font-bold tracking-tight text-primary">Our Introduction</h2>
-          <GenAIIntro />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
-            <p className="mt-4 text-muted-foreground">
-              To transform complex engineering challenges into elegant, efficient, and sustainable realities. We are dedicated to pushing the boundaries of design and construction, delivering projects that not only meet but exceed our clients' expectations for quality, safety, and performance.
+        {/* COMPANY OVERVIEW */}
+        <section className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-primary">
+              Company Overview
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              SVLN ENGINEERING is an India-based firm engaged in the supply of IT
+              hardware and technology solutions to Government, Defence, Public
+              Sector Undertakings (PSUs), and institutional clients. The firm
+              operates in compliance-driven environments and supports Central and
+              State Government departments, educational institutions, and
+              enterprise organizations across India.
             </p>
           </div>
-          <div>
-            <h2 className="text-3xl font-bold tracking-tight">Our Values</h2>
-            <ul className="mt-4 space-y-2 text-muted-foreground list-disc list-inside">
-              <li><strong>Innovation:</strong> We embrace creativity and new technologies to find the best solutions.</li>
-              <li><strong>Integrity:</strong> We operate with honesty and transparency in all our relationships.</li>
-              <li><strong>Excellence:</strong> We are committed to the highest standards of quality and precision.</li>
-              <li><strong>Collaboration:</strong> We believe the best results come from working together with our clients and partners.</li>
-            </ul>
+
+          <div className="relative h-64 w-full overflow-hidden rounded-xl shadow-sm">
+            <Image
+              src="/about/overview.jpg"
+              alt="SVLN Engineering company overview"
+              fill
+              className="object-cover"
+            />
           </div>
-        </div>
-        
-        <div>
-          <h2 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">Meet Our Team</h2>
-          <p className="mt-4 text-center text-lg text-muted-foreground">The architects and engineers behind our success.</p>
-          <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-            {teamMembers.map((member) => {
-              const image = PlaceHolderImages.find((img) => img.id === member.imageId);
-              return (
-                <div key={member.name} className="text-center">
-                  <Avatar className="mx-auto h-32 w-32 mb-4">
-                    {image && (
-                      <AvatarImage src={image.imageUrl} alt={member.name} data-ai-hint={image.imageHint} />
-                    )}
-                    <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-primary">{member.role}</p>
-                </div>
-              );
-            })}
+        </section>
+
+        {/* OPERATIONS & COMPLIANCE */}
+        <section className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="relative h-64 w-full overflow-hidden rounded-xl shadow-sm md:order-1">
+            <Image
+              src="/about/compliance.jpg"
+              alt="Compliance and procurement operations"
+              fill
+              className="object-cover"
+            />
           </div>
-        </div>
+
+          <div className="space-y-4 md:order-2">
+            <h2 className="text-2xl font-semibold tracking-tight text-primary">
+              Operations & Compliance
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              SVLN ENGINEERING undertakes procurement and supply of genuine OEM
+              products through authorized distribution channels, ensuring strict
+              adherence to applicable technical specifications, warranty terms,
+              and service requirements. All engagements are executed in alignment
+              with established procurement norms and compliance standards.
+            </p>
+          </div>
+        </section>
+
+        {/* APPROACH */}
+        <section className="grid gap-10 md:grid-cols-2 md:items-center">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-primary">
+              Our Professional Approach
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              The company follows a professional, transparent, and
+              process-oriented approach, with a strong emphasis on quality,
+              accountability, and timely execution. SVLN ENGINEERING is committed
+              to building long-term and sustainable business relationships by
+              consistently delivering reliable solutions and dependable service
+              outcomes.
+            </p>
+          </div>
+
+          <div className="relative h-64 w-full overflow-hidden rounded-xl shadow-sm">
+            <Image
+              src="/about/approach.jpg"
+              alt="Professional approach and execution"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </section>
+
+        {/* KEY STRENGTHS */}
+        <section className="rounded-xl border bg-muted/40 p-8">
+          <h2 className="text-2xl font-semibold tracking-tight text-primary mb-6 text-center">
+            Key Strengths
+          </h2>
+
+          <ul className="mx-auto max-w-3xl list-disc list-inside space-y-3 text-muted-foreground">
+            <li>Experience in Government and PSU procurement environments</li>
+            <li>Supply of genuine OEM products through authorized channels</li>
+            <li>Strong focus on compliance, documentation, and process adherence</li>
+            <li>Commitment to quality assurance and timely delivery</li>
+            <li>Long-term relationship-driven engagement model</li>
+          </ul>
+        </section>
+
       </div>
     </div>
   );
