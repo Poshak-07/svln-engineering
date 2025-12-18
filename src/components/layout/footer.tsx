@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { Mail, Phone, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -35,7 +36,8 @@ export function Footer() {
             </Link>
 
             <p className="text-sm text-gray-600 max-w-sm">
-              India-based IT hardware procurement partner for government and institutional clients.
+              India-based IT hardware procurement partner for government and
+              institutional clients.
             </p>
           </div>
 
@@ -72,47 +74,22 @@ export function Footer() {
                 className="flex items-center gap-2 hover:text-primary"
               >
                 <Phone className="h-4 w-4" />
-                +91 9885588966
+                +91 98855 88966
               </a>
             </div>
           </div>
 
-          {/* SOCIAL */}
+          {/* FOLLOW US */}
           <div className="space-y-4">
             <h4 className="font-semibold text-gray-900">Follow Us</h4>
-            <div className="flex space-x-4 text-gray-600">
-
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/svlnengineering/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="hover:text-primary transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="hover:text-primary transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-
-            </div>
+            <a
+              href="https://www.linkedin.com/company/svlnengineering/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-primary transition-colors"
+            >
+              LinkedIn
+            </a>
           </div>
 
         </div>
@@ -123,6 +100,7 @@ export function Footer() {
             <span>
               © {new Date().getFullYear()} SVLN Engineering. All Rights Reserved.
             </span>
+
             <div className="flex gap-4">
               {legalLinks.map((link) => (
                 <Link

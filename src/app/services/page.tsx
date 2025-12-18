@@ -2,8 +2,8 @@ import { services } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata = {
-  title: 'Our Services | BluePrint Portfolio',
-  description: 'Explore the comprehensive range of engineering and design services offered by BluePrint Portfolio.',
+  title: 'Our Services',
+  description: 'Explore the comprehensive range of engineering and design services offered by SVLN ENGINEERING.',
 };
 
 export default function ServicesPage() {

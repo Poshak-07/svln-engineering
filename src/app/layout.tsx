@@ -6,8 +6,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'BluePrint Portfolio',
-  description: 'A professional business portfolio website by BluePrint.',
+  title: 'SVLN Engineering',
+  description: 'India-based IT hardware procurement partner for government and institutional clients.',
 };
 
 export default function RootLayout({
