@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'SVLN Engineering',
   description:
     'India-based IT hardware procurement partner for government and institutional clients.',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({

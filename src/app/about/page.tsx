@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About Us | SVLN Engineering',
+  title: 'About Us',
   description:
     'SVLN Engineering is an India-based firm supplying IT hardware and technology solutions to Government, Defence, PSUs, and institutional clients.',
 };
